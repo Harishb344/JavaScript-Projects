@@ -35,6 +35,15 @@ const taskTemplate=document.getElementById('taskTemplate');
 
     if(taskName==='') return;    
 
+    const duplicate=tasks.some(task=>task.name.toLowerCase()===taskName.toLowerCase());
+
+    if(duplicate)
+    {
+     alert("Task already added");
+      taskInput.value="";
+      return;
+    }
+
     tasks.push({
         id:Date.now(),
         name:taskName,
@@ -42,6 +51,7 @@ const taskTemplate=document.getElementById('taskTemplate');
     })
 
         taskInput.value="";
+
 
         displayTask();
     })
