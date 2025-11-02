@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <div class="container">
+    <h2>To-Do List</h2>
+    <div class="input-section">
+    <label for="taskInput" name="TaskInput">Enter the task:</label>
+   <input type="text" id="taskInput" name="Input task" required><br>
+    
+    <button id="addTaskToList">Add</button>
+    </div>
+
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="taskBody"></tbody>
+        </table>
+       
+        <template id="taskTemplate">
+            <tr>
+            <td class="text-name"></td>
+            <td>
+                <span class="task-status badge"></span>
+            </td>
+            <td>
+                <button class="delete-btn">Delete</button>
+            </td>
+            <tr>
+        </template>
+    </div>
+    
+   <!--Load scripts after rendering the html elements-->
+   <script type="module"  src="tasks.js"></script>
+</body>
+</html>
